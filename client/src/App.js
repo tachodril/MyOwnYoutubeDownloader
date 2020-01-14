@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./style.css";
 import button from "./button";
 class App extends Component {
   constructor(props) {
@@ -23,14 +24,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Khud ka video Downloader</h1>
+        <link rel="stylesheet" href="style.css"></link>
+        <h1 className="heading">Khud ka video Downloader</h1>
         <input
+          className="URL-input"
           value={this.state.video_link}
           onChange={evt => this.updateInputValue(evt)}
           id="input_link"
           placeholder="Youtube Video Link"
         ></input>
-        <button onClick={this.downloadVideo}>Convert</button>
+        <button className="convert-button" onClick={this.downloadVideo}>
+          Convert
+        </button>
       </div>
     );
   }
